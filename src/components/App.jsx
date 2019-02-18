@@ -1,13 +1,13 @@
 import React from 'react';
-import menuIcon from '../assets/images/menuIcon.svg';
+// import menuIcon from '../assets/images/menuIcon.svg';
 import styles from './App.css';
+import ApiControl from './ApiControl';
 
 function App() {
   return (
     <div>
-      <img src={menuIcon}/>
-      <h1>React Application</h1>
-      <h3 className={styles.text}>Local CSS Module Style</h3>
+      <h3 className={styles.text}>App component</h3>
+      <ApiControl />
     </div>
   );
 }

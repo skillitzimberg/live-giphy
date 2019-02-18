@@ -1,5 +1,5 @@
 {
-  "name": "react-application",
+  "name": "live-giphy",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,7 +9,7 @@
     "start": "webpack-dev-server --mode production",
     "lint": "eslint src/** src/**/**"
   },
-  "author": "Phil Mass",
+  "author": "Phil Mass & Scott Bergler",
   "license": "ISC",
   "dependencies": {
     "react": "^16.8.1",

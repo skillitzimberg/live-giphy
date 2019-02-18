@@ -4,4 +4,9 @@ img {
 
 .text {
   color: #0080ff;
+  border: 1px solid #ff8000;
+}
+
+.inputComp {
+  border: 1px solid #333;
 }
