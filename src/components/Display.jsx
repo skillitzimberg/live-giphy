@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 function Display(props) {
   return (
     <div>
-      <h3>Display component</h3>
       <div>{props.searchText}</div>
       <div>
         <iframe src={props.embedUrl} frameBorder="1" allowFullScreen>
