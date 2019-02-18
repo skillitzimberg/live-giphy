@@ -1,0 +1,15 @@
+.box {
+  margin: 1em;
+  display: inline-block;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.3em;
+}

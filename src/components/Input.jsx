@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './App.css';
+import styles from './Input.css';
 
 function Input(props) {
   function findImage(event) {
@@ -12,7 +12,7 @@ function Input(props) {
   }
 
   return (
-    <div className="inputComp">
+    <div className={styles.box}>
       <legend>Search NASA</legend>
       <input onKeyUp={findImage}/>
     </div>
