@@ -1,26 +1,24 @@
 import React from 'react';
-// import styles from './App.css';
+import PropTypes from 'prop-types';
 
-class Display extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
-  componentDidMount() {
-    console.log('display did mount');
-  }
-
-  componentWillUnmount() {
-    console.log('display will unmount');
-  }
-
-  render() {
-    return (
+function Display(props) {
+  return (
+    <div>
+      <h3>Display component</h3>
+      <div>{props.searchText}</div>
       <div>
-        <h3>Display component</h3>
+        <iframe src={props.embedUrl} frameBorder="1" allowFullScreen>
+        </iframe>
+        <button type='submit'>Save to Favorites</button>
       </div>
-    );
-  }
+    </div>
+  );
 }
+
+Display.propTypes = {
+  searchText: PropTypes.string,
+  embedUrl: PropTypes.string
+};
 
 export default Display;

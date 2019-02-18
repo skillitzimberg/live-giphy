@@ -8,8 +8,7 @@ class ApiControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      inputText: 'Hello Text.',
-      showDisplay: true,
+      searchText: '',
       displayUrl: ''
     };
     this.handleTextChange = this.handleTextChange.bind(this);
@@ -17,13 +16,18 @@ class ApiControl extends React.Component {
 
   handleTextChange(event) {
     event.preventDefault();
-    console.log('handleTextChange', event.target.value);
-    this.setState({inputText: event.target.value});
-    fetch(`https://cors-anywhere.herokuapp.com/https://api.giphy.com/v1/gifs/search?api_key=${api_key}&q=${this.state.inputText}&limit=1`)
-      .then(response => response.json())
-      .then(data => {
-        this.setState({displayUrl: data['data'][0].embed_url});
-        console.log('url', data['data'][0].embed_url);
+    const inputText = event.target.value;
+    const url = `https://cors-anywhere.herokuapp.com/https://api.giphy.com/v1/gifs/search?api_key=${api_key}&q=${inputText}&limit=1`;
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        if(data['data'] && data['data'][0]) {
+          console.log('data', inputText, data);
+          this.setState({
+            searchText: inputText,
+            displayUrl: data['data'][0].embed_url
+          });
+        }
       });
   }
 
@@ -34,7 +38,9 @@ class ApiControl extends React.Component {
         <p>{this.state.inputText}</p>
         <Input
           onTextChange={this.handleTextChange}/>
-        {this.state.showDisplay && <Display />}
+        <Display
+          searchText={this.state.searchText}
+          embedUrl={this.state.displayUrl}/>
         <SavedList />
       </div>
     );
