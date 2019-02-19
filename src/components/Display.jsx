@@ -10,7 +10,9 @@ function Display(props) {
         </img>
         <div className={styles.controls}>
           <div>Search: {props.searchText}</div>
-          <button type='submit'>Save to Favorites</button>
+          <button type='submit' onClick={() => props.onSave(props.searchText, props.embedUrl)}>
+            Save to Favorites
+          </button>
         </div>
       </div>
     </div>
@@ -19,7 +21,8 @@ function Display(props) {
 
 Display.propTypes = {
   searchText: PropTypes.string,
-  embedUrl: PropTypes.string
+  embedUrl: PropTypes.string,
+  onSave: PropTypes.func
 };
 
 export default Display;
