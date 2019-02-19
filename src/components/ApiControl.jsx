@@ -54,7 +54,9 @@ class ApiControl extends React.Component {
           embedUrl={this.state.displayUrl}
           onSave={this.handleSave}/>
         {this.state.saveRequested &&
-          <SavedList saveList={this.state.saveList} deleteRequested={this.handleDelete} id={v4()}/>
+          <SavedList
+            saveList={this.state.saveList} deleteRequested={this.handleDelete}
+            id={v4()}/>
         }
 
       </div>
